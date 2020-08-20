@@ -3,7 +3,8 @@ pipeline{
         stages{
             stage('Clone Repository'){
                 steps{
-                     sh "mkdir ~/new && \$_"
+                     sh "mkdir ~/new"
+                     sh "cd ~/new/"
                      sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
