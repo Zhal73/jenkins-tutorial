@@ -3,10 +3,10 @@ pipeline{
         stages{
             stage('Clone Repository'){
                 steps{
-                     sh "mkdif ~/repo-tutotial-2 && cd $_"
+                     sh "mkdir ~/repo-tutotial-2 && cd $_"
                      sh "mv install_docker_compose.sh ~/repo-tutotial-2/install_docker_compose.sh"
                      sh "chmod +x install_docker_compose.sh"
-                     sh "git clone https://github.com/Zhal73/jenkins-tutorial.git"
+                     sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
             stage('Install Docker and Docker-Compose'){
