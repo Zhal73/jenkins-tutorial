@@ -12,7 +12,7 @@ pipeline{
             }
             stage('Install Docker and Docker-Compose'){
                 steps{
-                     sh "./~/new/install_docker_compose.sh"
+                     sh ". ~/new/.install_docker_compose.sh"
                 }
             }
             stage('Desploy'){
