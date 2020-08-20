@@ -3,9 +3,6 @@ pipeline{
         stages{
             stage('Clone Repository'){
                 steps{
-                     sh "mkdir ~/repo-tutotial-2 && cd $_"
-                     sh "mv install_docker_compose.sh ~/repo-tutotial-2/install_docker_compose.sh"
-                     sh "chmod +x install_docker_compose.sh"
                      sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
                 }
             }
@@ -13,6 +10,8 @@ pipeline{
                 steps{
                      sh "curl https://get.docker.com | sudo bash"
                      sh ". ./install_docker_compose.sh"
+                     sh "sudo curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose"
+                     sh "chmod +x /usr/local/bin/docker-compose"
                 }
             }
             stage('Desploy'){
